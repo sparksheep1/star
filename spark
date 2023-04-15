@@ -1,0 +1,116 @@
+#include <stdio.h>
+
+int main()
+{
+	float w, h, BMI;
+	scanf("%d %d", &w, &h);
+	BMI = w /(h * h);
+	printf("%f\n", BMI);
+	return 0;
+}
+
+
+
+#include <stdio.h>
+int sum(int a)
+{
+	int c = 0;
+	static int b = 3;
+	c += 1;
+	b += 2;
+	return (a + b + c);
+}
+int main()
+{
+	int i;
+	int a = 2;
+	for (i = 0; i < 5; i++)
+	{
+		printf("%d,", sum(a));
+	}
+}
+
+
+#include <stdio.h>
+int main()
+{
+	int i,j,a[50];
+	printf("请输入三个整数:>>\n");
+	for (i=0;i<3;i++)
+	{	
+		scanf("%d", &a[i]);
+	}
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 3 - i; j++)
+		{
+			if (a[j] < a[j + 1])
+			{
+				int tmp = 0;
+				tmp = a[j + 1];
+				a[j + 1] = a[j];
+				a[j] = tmp;
+			}
+		}
+	}
+	for (i = 0; i < 3; i++)
+	{
+		printf("%d", a[i]);
+	}
+}
+
+
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	int a,i;
+	for (a = 100; a < 200; a++)
+	{
+		for (i = 2; i < sqrt(a); i++)
+		{
+			if (a % i == 0)
+				break;
+		}
+	printf("%d  ", a);
+	}
+	return 0;
+}
+
+
+#include <stdio.h>
+int main()
+{
+	int year;
+	for (year = 1000; year <= 2000; year++)
+	{
+		if (year%4==0&&year%100!=0||year%400==0)
+			printf("%d  ",year);
+	}
+	return 0;
+}
+
+
+#include <stdio.h>
+int main()
+{
+	int a, b,tmp;
+	scanf("%d%d", &a, &b);
+	if (a == 0 || b == 0)
+		printf("0\n");
+	else
+	{
+		while (a != 0 && b != 0)
+		{
+			if (a < b)
+			{
+				tmp = a;
+				a = b;
+				b = tmp;
+			}
+			a %= b;
+		}
+		printf("%d\n", b);
+	}
+	return 0;
+}
